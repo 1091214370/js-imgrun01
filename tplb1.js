@@ -32,25 +32,13 @@ window.onload=function (){
 		i+=2;
 		i=i%3;
 		listTime();
-		if(i>0&&i<3){
-			var si =(100 * i);
-			road.style.marginLeft="-"+si+"%";
-		}else{
-			road.style.marginLeft="0";
-			i=0;
-		}
+		run(i);
 	}
 	function tpturnRight(){
 		i+=1;
 		i=i%3;
 		listTime();
-		if(i>0&&i<3){
-			var si =100 * i;
-			road.style.marginLeft="-"+si+"%";
-		}else{
-			road.style.marginLeft=0;
-			i=0;
-		}
+		run(i);
 	}
 	timeId=setInterval(tpturnRight,3000);
 	tl.onclick=function(){
@@ -69,5 +57,13 @@ window.onload=function (){
 		tpturnLeft();
 		timeId=setInterval(tpturnRight,3000);
 	}
-
+function run(i){
+	if(i>0&&i<3){
+			var si =(100 * i);
+			road.style.marginLeft="-"+si+"%";
+		}else{
+			road.style.marginLeft="0";
+			i=0;
+		}
+}
 }
